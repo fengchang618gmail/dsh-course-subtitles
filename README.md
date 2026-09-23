@@ -71,6 +71,8 @@ node scripts/activate.js      # 把插件链接进 DSH profile 并写好 cordis.
 # 然后重启 DSH（退出后重新运行 dsh --profile web）
 ```
 
+> 仓库自带 `dsh.bundle` 清单和 `cordis.patch.yml`，所以走官方安装通道也是同一套配置；发布到 npm 之后可以直接 `dsh plugin --profile web add dsh-course-subtitles`，不必手动 clone。
+
 **方式 B：只用命令行，不装插件**
 
 ```bash

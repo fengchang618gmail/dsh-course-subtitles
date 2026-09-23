@@ -67,6 +67,8 @@ node scripts/activate.js      # links the package into the DSH profile + writes 
 # then restart DSH (exit and run `dsh --profile web` again)
 ```
 
+> The repo ships a `dsh.bundle` manifest and a `cordis.patch.yml`, so the official install path applies the exact same configuration; once published to npm, `dsh plugin --profile web add dsh-course-subtitles` works without cloning.
+
 **CLI only**
 
 ```bash

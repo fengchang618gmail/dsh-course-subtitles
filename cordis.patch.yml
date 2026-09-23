@@ -1,0 +1,12 @@
+# dsh-course-subtitles - course/video subtitles -> bilingual Feishu docs
+#
+# `dsh plugin add` applies this patch to the profile, inserting the plugin into
+# the Cordis composition. The `id` is the row identity used by the loader - it
+# must stay `dsh-course-subtitles` so this file and scripts/activate.js produce
+# exactly the same row and never add a duplicate.
+#
+# A bare `- id:` row only *overrides* an existing entry and is silently ignored,
+# so the row must be written as an `insert:` list.
+- insert:
+    - id: dsh-course-subtitles
+      name: 'dsh-course-subtitles'

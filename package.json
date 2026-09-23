@@ -17,7 +17,9 @@
     "src",
     "bin",
     "scripts/activate.js",
+    "cordis.patch.yml",
     "config.example.json",
+    "docs",
     "README.md",
     "README.en.md",
     "LICENSE"
@@ -50,6 +52,21 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "@deepseek-ai/dsh-credentials": "^0.1.5-rc.2",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.2"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": { "optional": true },
+    "@deepseek-ai/dsh-credentials": { "optional": true },
+    "@deepseek-ai/dsh-tools": { "optional": true }
   },
   "optionalDependencies": {
     "youtube-transcript": "^1.2.1"
