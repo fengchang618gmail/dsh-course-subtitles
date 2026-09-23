@@ -1,0 +1,47 @@
+{
+  "courseUrl": "https://learn.deeplearning.ai/courses/generative-ai-for-everyone",
+  "courseDisplayName": "Generative AI for Everyone 给所有人的生成式AI课",
+
+  "feishuAppId": "",
+  "feishuDomain": "",
+  "feishuParent": "https://<your-tenant>.feishu.cn/wiki/<parent-wiki-token>",
+
+  "groupByWeek": true,
+  "weekNames": {},
+  "groupNames": {},
+
+  "outlineSource": "auto",
+  "outlineTypes": ["video"],
+  "outlineIncludeSubtopics": true,
+  "outlineTitle": "",
+  "outlineLinks": false,
+
+  "llmBaseUrl": "https://api.deepseek.com",
+  "llmModel": "deepseek-chat",
+  "llmProviders": [
+    {
+      "name": "my-relay",
+      "baseUrl": "https://relay.example.com/v1",
+      "model": "deepseek-chat",
+      "api": "openai-completions",
+      "apiKeyEnv": "MY_RELAY_API_KEY"
+    }
+  ],
+  "llmTemperature": 0.3,
+  "translateChunkSize": 60,
+  "llmConcurrency": 3,
+  "segmentSentences": true,
+
+  "proxyUrl": "",
+  "proxyMode": "auto",
+  "proxyBypass": "",
+  "proxyProbePorts": "",
+  "ytDlpPath": "",
+  "youtubeYtDlp": true,
+
+  "lessons": "",
+  "force": false,
+  "updateDoc": false,
+  "dryRun": false,
+  "courseraCookie": ""
+}

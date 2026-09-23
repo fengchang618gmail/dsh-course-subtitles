@@ -1,0 +1,28 @@
+# Secrets — never commit these. Keys live in the environment or in
+# $DSH_HOME/.credentials.yaml (outside the repository).
+.course-subtitles.secrets.json
+course-subtitles.config.json
+config.json
+*.secrets.json
+.env
+.env.*
+!.env.example
+
+# Runtime state
+.course-subtitles-cache/
+.test-cache/
+cache/
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

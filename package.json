@@ -1,0 +1,58 @@
+{
+  "name": "dsh-course-subtitles",
+  "version": "0.5.0",
+  "description": "DSH dual-half plugin: extract course video subtitles (DeepLearning.AI, YouTube, Bilibili, Coursera), rebuild them as whole sentences, translate line-by-line (EN/ZH), generate section headings, and publish one Feishu doc per lesson under a parent node. Also exports a Course Outline (video titles as plain text, week/module blocks preserved) into one Feishu doc. Every credential comes from the environment or the harness credential store — nothing is hardcoded, and the LLM key chain falls back automatically.",
+  "type": "module",
+  "main": "src/host/index.js",
+  "exports": {
+    ".": "./src/host/index.js",
+    "./engine/*": "./src/engine/*.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "course-subtitles": "./bin/cs.js",
+    "dsh-course-subtitles": "./bin/cs.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "scripts/activate.js",
+    "config.example.json",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "subtitles",
+    "captions",
+    "transcript",
+    "translation",
+    "bilingual",
+    "youtube",
+    "bilibili",
+    "coursera",
+    "deeplearning-ai",
+    "feishu",
+    "lark",
+    "study-notes",
+    "knowledge-base"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengchang618gmail/dsh-course-subtitles.git"
+  },
+  "homepage": "https://github.com/fengchang618gmail/dsh-course-subtitles#readme",
+  "bugs": {
+    "url": "https://github.com/fengchang618gmail/dsh-course-subtitles/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "optionalDependencies": {
+    "youtube-transcript": "^1.2.1"
+  },
+  "license": "MIT"
+}
