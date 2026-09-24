@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 268" font-family="'Segoe Print','Comic Sans MS','Kaiti SC','STKaiti','KaiTi','DFKai-SB',cursive">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.6,1.2 L8.4,5 L0.6,8.8" fill="none" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="268" fill="#fffdf6"/>
+
+  <!-- hand-drawn boxes -->
+  <g filter="url(#rough)" fill="none" stroke="#4a4a4a" stroke-width="2.2" stroke-linecap="round">
+    <rect x="16" y="80" width="124" height="70" rx="11" fill="#fff3e2" transform="rotate(-0.8 78 115)"/>
+    <rect x="162" y="80" width="124" height="70" rx="11" fill="#e8f1fe" transform="rotate(0.7 224 115)"/>
+    <rect x="308" y="80" width="124" height="70" rx="11" fill="#eaf7ec" transform="rotate(-0.6 370 115)"/>
+    <rect x="454" y="80" width="124" height="70" rx="11" fill="#fff7dd" transform="rotate(0.8 516 115)"/>
+    <rect x="600" y="80" width="124" height="70" rx="11" fill="#f1eafe" transform="rotate(-0.7 662 115)"/>
+    <rect x="746" y="80" width="124" height="70" rx="11" fill="#dbefdd" stroke="#2f7d4f" stroke-width="2.8" transform="rotate(0.9 808 115)"/>
+
+    <!-- wobbly arrows between boxes -->
+    <path d="M142,115 C148,110 152,120 158,115" marker-end="url(#ah)"/>
+    <path d="M288,115 C294,110 298,120 304,115" marker-end="url(#ah)"/>
+    <path d="M434,115 C440,110 444,120 450,115" marker-end="url(#ah)"/>
+    <path d="M580,115 C586,110 590,120 596,115" marker-end="url(#ah)"/>
+    <path d="M726,115 C732,110 736,120 742,115" marker-end="url(#ah)"/>
+
+    <!-- dashed cache note -->
+    <rect x="16" y="198" width="854" height="46" rx="12" fill="#fcfcfa" stroke-dasharray="7 5" transform="rotate(0.3 443 221)"/>
+    <path d="M808,164 C828,180 810,190 796,196" marker-end="url(#ah)" stroke-dasharray="3 4" stroke="#8a8a8a"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="middle" stroke="none">
+    <text x="78"  y="107" font-size="15.5" fill="#333" transform="rotate(-0.8 78 115)">课程链接</text>
+    <text x="78"  y="127" font-size="11"   fill="#777" transform="rotate(-0.8 78 115)">4 个平台都行</text>
+
+    <text x="224" y="107" font-size="15.5" fill="#333" transform="rotate(0.7 224 115)">抓字幕</text>
+    <text x="224" y="127" font-size="11"   fill="#777">官方 / 自动字幕</text>
+
+    <text x="370" y="107" font-size="15.5" fill="#333" transform="rotate(-0.6 370 115)">合并整句</text>
+    <text x="370" y="127" font-size="11"   fill="#777">绝不切断一句话</text>
+
+    <text x="516" y="107" font-size="15.5" fill="#333" transform="rotate(0.8 516 115)">中英翻译</text>
+    <text x="516" y="127" font-size="11"   fill="#777">LLM 逐句对照</text>
+
+    <text x="662" y="107" font-size="15.5" fill="#333" transform="rotate(-0.7 662 115)">章节标题</text>
+    <text x="662" y="127" font-size="11"   fill="#777">中英对照 H2</text>
+
+    <text x="808" y="107" font-size="16.5" fill="#2f7d4f" font-weight="bold" transform="rotate(0.9 808 115)">飞书文档</text>
+    <text x="808" y="127" font-size="11"   fill="#4d8f6a">每课一篇，自动归档</text>
+
+    <text x="443" y="225" font-size="13" fill="#666">磁盘缓存：字幕 / 断句 / 翻译 / 章节全部落盘 —— 重跑只补缺失的部分，大纲导出零 token</text>
+  </g>
+</svg>

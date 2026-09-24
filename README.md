@@ -12,10 +12,7 @@
 
 ## 它到底做了什么
 
-```
-课程链接 ──► 抓字幕 ──► 合并成完整句子 ──► 逐句中英翻译 ──► 生成章节标题 ──► 飞书文档（每课一篇）
-             (4 个平台)   (绝不切断一句话)      (LLM)          (H2 中英)        └─ 自动挂到你的知识库目录下
-```
+<p align="center"><img src="docs/pipeline-sketch.svg" alt="工作流程：课程链接 → 抓字幕 → 合并整句 → 中英翻译 → 章节标题 → 飞书文档" width="780"></p>
 
 最终你得到一篇飞书文档，长这样：
 
@@ -62,28 +59,16 @@ Generative AI is a general purpose technology.   ← 英文原句
 
 ### 第 1 步：安装
 
-**方式 A：装成 DSH 插件（推荐，能在对话里直接用）**
-
 ```bash
 dsh plugin --profile web add github:fengchang618gmail/dsh-course-subtitles
-# 然后重启 DSH（退出后重新运行 dsh --profile web）
 ```
+
+装好后重启 DSH（退出后重新运行 `dsh --profile web`）。
 
 > 走的就是 DSH 官方插件通道：一条命令把包装进 profile，并自动登记
 > `dsh.profile.bundles`（识别包里的 `dsh.bundle` 清单 + `cordis.patch.yml`），
-> 不需要 clone，也不需要任何额外脚本。发布到 npm 之后命令进一步简化为
+> 不需要 clone，也不需要任何额外脚本。发布到 npm 之后命令简化为
 > `dsh plugin --profile web add dsh-course-subtitles`。
->
-> 本地开发调试：在插件目录里跑 `dsh plugin --profile web add .`（相对路径以当前
-> 目录为基准），或 `dsh plugin --profile web add file:<插件目录绝对路径>`。
-
-**方式 B：只用命令行，不装插件**
-
-```bash
-git clone https://github.com/fengchang618gmail/dsh-course-subtitles.git
-cd dsh-course-subtitles
-node bin/cs.js --help
-```
 
 ### 第 2 步：配置密钥（二选一，都不写进代码）
 
@@ -206,6 +191,8 @@ course-subtitles config             # 打印最终生效的配置（密钥打码
 ---
 
 ## 关于密钥：仓库里没有任何密钥
+
+<p align="center"><img src="docs/credentials-sketch.svg" alt="密钥只来自环境变量、本地配置或 DSH 凭据库，运行时读取，绝不写进代码" width="700"></p>
 
 这个项目**不包含、不需要、也不接受**硬编码的 API Key。所有凭据都从下面三个地方按优先级读取：
 

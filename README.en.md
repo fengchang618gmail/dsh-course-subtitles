@@ -12,10 +12,7 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) pl
 
 ## What it does
 
-```
-course URL ──► fetch captions ──► merge into whole sentences ──► translate EN/ZH ──► section headings ──► Feishu docs (one per lesson)
-                (4 platforms)      (never splits a sentence)        (LLM)              (bilingual H2)      └─ filed under your wiki node
-```
+<p align="center"><img src="docs/pipeline-sketch.svg" alt="Pipeline: course URL → fetch captions → whole sentences → EN/ZH translation → section headings → Feishu docs" width="780"></p>
 
 The output is one Feishu doc per lesson:
 
@@ -58,30 +55,17 @@ There is also a **course outline export**: it reads the course home page's outli
 
 ### 1. Install
 
-**As a DSH plugin (recommended)**
-
 ```bash
 dsh plugin --profile web add github:fengchang618gmail/dsh-course-subtitles
-# then restart DSH (exit and run `dsh --profile web` again)
 ```
+
+Then restart DSH (exit and run `dsh --profile web` again).
 
 > This is the official DSH plugin channel: one command installs the package into the
 > profile and auto-registers it in `dsh.profile.bundles` (the `dsh.bundle` manifest +
 > `cordis.patch.yml` inside the package do the wiring) — no clone, no extra scripts.
 > Once the package is published to npm the command shortens to
 > `dsh plugin --profile web add dsh-course-subtitles`.
->
-> For local development, run `dsh plugin --profile web add .` inside the checkout
-> (relative specs are anchored to the invoking directory), or
-> `dsh plugin --profile web add file:<absolute path to the plugin dir>`.
-
-**CLI only**
-
-```bash
-git clone https://github.com/fengchang618gmail/dsh-course-subtitles.git
-cd dsh-course-subtitles
-node bin/cs.js --help
-```
 
 ### 2. Provide credentials (never stored in the repo)
 
@@ -155,6 +139,8 @@ course-subtitles config             # print the resolved config (secrets masked)
 ---
 
 ## Credentials: nothing is hardcoded
+
+<p align="center"><img src="docs/credentials-sketch.svg" alt="Keys come only from env vars, a local config file, or the DSH credential store — read at runtime, never committed" width="700"></p>
 
 This project ships no API key, no tenant host and no wiki token. Credentials are resolved from, in order:
 
