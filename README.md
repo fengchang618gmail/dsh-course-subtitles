@@ -83,17 +83,9 @@ $env:DEEPSEEK_API_KEY="sk-xxxxxxxxxxxx"
 
 ### 第 4 步：在对话里使用
 
-第一次用之前，把课程地址和飞书目录写进设置文档 `$DSH_HOME/settings.yaml` 的 `course-subtitles:` 段：
+重启后直接对 agent 说，把课程链接和飞书目录放进对话里就行，不用改任何设置文件：
 
-```yaml
-course-subtitles:
-  courseUrl: https://learn.deeplearning.ai/courses/generative-ai-for-everyone
-  feishuParent: https://你的租户.feishu.cn/wiki/xxxxxxxxxxxxxxxxxxxx
-```
-
-之后只要对 agent 说一句：
-
-> 帮我跑一下课程字幕
+> 帮我跑一下课程字幕 https://learn.deeplearning.ai/courses/generative-ai-for-everyone，写到飞书 https://你的租户.feishu.cn/wiki/xxxxxxxxxxxxxxxxxxxx
 
 agent 会调用这几个工具（通常你不用关心名字）：
 

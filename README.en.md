@@ -81,17 +81,9 @@ Keys are read from the environment at run time — never written into code or th
 
 ### 4. Use it in a conversation
 
-Before the first run, put the course URL and Feishu parent node into `$DSH_HOME/settings.yaml` under the `course-subtitles:` namespace:
+After restarting, just tell the agent — paste the links right in the message, no settings file to edit:
 
-```yaml
-course-subtitles:
-  courseUrl: https://learn.deeplearning.ai/courses/generative-ai-for-everyone
-  feishuParent: https://your-tenant.feishu.cn/wiki/xxxxxxxxxxxx
-```
-
-Then just tell the agent:
-
-> run the course subtitles
+> run the course subtitles for https://learn.deeplearning.ai/courses/generative-ai-for-everyone, publish under https://your-tenant.feishu.cn/wiki/xxxxxxxxxxxx
 
 The agent calls these tools (normally you don't need to know their names):
 
