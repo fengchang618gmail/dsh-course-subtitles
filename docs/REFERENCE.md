@@ -103,7 +103,9 @@ node bin/cs.js llm --probe
 ### DSH 插件（GUI 内调用）
 
 ```bash
-node scripts/activate.js    # 1) 注册进 DSH profile（符号链接 + cordis.patch.yml 行）
+dsh plugin --profile web add github:fengchang618gmail/dsh-course-subtitles
+# 1) 官方通道安装：自动登记 dsh.profile.bundles，无需 clone 或额外脚本
+#    （本地开发可在插件目录里 add . 或 add file:<绝对路径>）
 # 2) 重启 DSH：退出当前 dsh 进程后重新运行  dsh --profile web
 # 3) 在对话中直接说“运行课程字幕”或“导出课程大纲”，agent 会调用对应工具
 #    （用存储的配置直接跑，无需再填课程 URL / 飞书父文档）
@@ -139,7 +141,7 @@ src/engine/          # 纯 Node 引擎（与 DSH 解耦，CLI 直接复用）
   config.js, cache.js, http.js, text.js
 src/host/index.js    # DSH Host 半（cordis 插件 + HTTP 路由 + agent 工具 + 配置存储）
 bin/cs.js            # CLI 入口（run / outline / adapters / proxy / llm / config）
-scripts/             # 自测脚本 + activate.js（DSH 注册）
+scripts/             # 自测脚本（activate.js 为旧版手动注册方式，已被 dsh plugin add 取代）
 ```
 
 ## 自测

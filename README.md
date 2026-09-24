@@ -65,13 +65,17 @@ Generative AI is a general purpose technology.   ← 英文原句
 **方式 A：装成 DSH 插件（推荐，能在对话里直接用）**
 
 ```bash
-git clone https://github.com/fengchang618gmail/dsh-course-subtitles.git
-cd dsh-course-subtitles
-node scripts/activate.js      # 把插件链接进 DSH profile 并写好 cordis.patch.yml
+dsh plugin --profile web add github:fengchang618gmail/dsh-course-subtitles
 # 然后重启 DSH（退出后重新运行 dsh --profile web）
 ```
 
-> 仓库自带 `dsh.bundle` 清单和 `cordis.patch.yml`，所以走官方安装通道也是同一套配置；发布到 npm 之后可以直接 `dsh plugin --profile web add dsh-course-subtitles`，不必手动 clone。
+> 走的就是 DSH 官方插件通道：一条命令把包装进 profile，并自动登记
+> `dsh.profile.bundles`（识别包里的 `dsh.bundle` 清单 + `cordis.patch.yml`），
+> 不需要 clone，也不需要任何额外脚本。发布到 npm 之后命令进一步简化为
+> `dsh plugin --profile web add dsh-course-subtitles`。
+>
+> 本地开发调试：在插件目录里跑 `dsh plugin --profile web add .`（相对路径以当前
+> 目录为基准），或 `dsh plugin --profile web add file:<插件目录绝对路径>`。
 
 **方式 B：只用命令行，不装插件**
 

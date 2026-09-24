@@ -61,13 +61,19 @@ There is also a **course outline export**: it reads the course home page's outli
 **As a DSH plugin (recommended)**
 
 ```bash
-git clone https://github.com/fengchang618gmail/dsh-course-subtitles.git
-cd dsh-course-subtitles
-node scripts/activate.js      # links the package into the DSH profile + writes cordis.patch.yml
+dsh plugin --profile web add github:fengchang618gmail/dsh-course-subtitles
 # then restart DSH (exit and run `dsh --profile web` again)
 ```
 
-> The repo ships a `dsh.bundle` manifest and a `cordis.patch.yml`, so the official install path applies the exact same configuration; once published to npm, `dsh plugin --profile web add dsh-course-subtitles` works without cloning.
+> This is the official DSH plugin channel: one command installs the package into the
+> profile and auto-registers it in `dsh.profile.bundles` (the `dsh.bundle` manifest +
+> `cordis.patch.yml` inside the package do the wiring) — no clone, no extra scripts.
+> Once the package is published to npm the command shortens to
+> `dsh plugin --profile web add dsh-course-subtitles`.
+>
+> For local development, run `dsh plugin --profile web add .` inside the checkout
+> (relative specs are anchored to the invoking directory), or
+> `dsh plugin --profile web add file:<absolute path to the plugin dir>`.
 
 **CLI only**
 
